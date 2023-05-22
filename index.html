@@ -18,12 +18,14 @@
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="libs/font-awesome/css/all.min.css">
 	<link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="libs/select2/select2.min.css">
 
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/media.css">
 
 	<script src="libs/jquery/jquery-3.6.0.min.js" defer></script>
 	<script src="libs/swiper/swiper-bundle.min.js" defer></script>
+	<script src="libs/select2/select2.min.js" defer></script>
 
 	<script src="js/common.js" defer></script>
 
@@ -34,30 +36,35 @@
 	<header>
 		<div class="container-fluid">
 			<div class="row justify-content-between align-items-center">
-				<div class="col">
+				<div class="col-lg-8 col-8">
 					<div class="d-flex align-items-center">
+						<div class="toggle-button d-lg-none">
+							<span></span>
+						</div>
 						<a href="#" class="logo">
 							<img src="images/logo.svg" alt="">
+							<span>Работайте <br>без простоев</span>
 						</a>
-						<a href="/catalog" class="alt-btn btn-icon">
+						<a href="/catalog" class="alt-btn btn-icon d-none d-lg-flex">
 							<img src="images/category-icon.svg" alt="">
 							Каталог
 						</a>
-						<ul>
+						<ul class="d-none d-lg-flex">
 							<li><a href="#">Филиалы</a></li>
 							<li><a href="#">О нас</a></li>
-							<li>
+							<li class="has-child">
 								<a href="#">Информация</a>
 								<ul class="sub-menu">
-									
+									<li><a href="#">Документы</a></li>
+									<li><a href="#">Контакты</a></li>
 								</ul>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col-lg-4 col-4">
 					<div class="d-flex justify-content-end align-items-center">
-						<div class="phone-widget">
+						<div class="phone-widget d-none d-lg-flex">
 							<div class="phone-widget-icon">
 								<img src="images/phone-icon.svg" alt="">
 							</div>
@@ -80,6 +87,40 @@
 			</div>
 		</div>
 	</header>
+	<aside>
+		<div class="aside-wrap">
+			<div class="toggle-menu-header">
+				<span>Меню</span>
+				<div class="toggle-button">
+					<span></span>
+				</div>
+			</div>
+			<a href="/catalogue" class="alt-btn btn-icon">
+				<img src="images/category-icon.svg" alt="">
+				Каталог
+			</a>
+			<ul>
+				<li><a href="#">Филиалы</a></li>
+				<li><a href="#">О нас</a></li>
+				<li class="has-child">
+					<a href="#">Информация</a>
+					<ul class="sub-menu-toggle">
+						<li><a href="#">Документы</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="phone-widget">
+				<div class="phone-widget-icon">
+					<img src="images/phone-icon.svg" alt="">
+				</div>
+				<div class="phone-widget-info">
+					<a href="tel:+78005553535">8 800 555 35 35</a>
+					<a href="#" class="contact">Перезвоните мне</a>
+				</div>
+			</div>
+		</div>
+	</aside>
 	<div class="page-section">
 		<div class="container-fluid">
 			<div class="row">
@@ -117,7 +158,7 @@
 								<h4>Параметры</h4>
 								<p>Диаметр</p>
 								<div class="text-radio-filter">
-									<input type="radio" name="radius" id="r22.5">
+									<input type="radio" name="radius" id="r22.5" >
 									<label for="r22.5">R22.5</label>
 								</div>
 								<div class="text-radio-filter">
@@ -128,11 +169,94 @@
 									<input type="radio" name="radius" id="r15">
 									<label for="r15">R15</label>
 								</div>
-								
+								<div class="select-widget">
+									<div class="select-widget-item">
+										<label for="width">Ширина</label>
+										<select name="width" id="width" class="custom-select">
+											<option value="315" selected>315</option>
+											<option value="310">310</option>
+											<option value="300">300</option>
+											<option value="295">295</option>
+										</select>
+									</div>
+									<div class="select-widget-item">
+										<label for="profile">Профиль</label>
+										<select name="profile" id="profile" class="custom-select">
+											<option value="70" selected>70</option>
+											<option value="65">65</option>
+										</select>
+									</div>
+								</div>
 							</div>
 							<div class="sidebar-filter-widget">
 								<h4>Цена</h4>
 								
+							</div>
+							<div class="sidebar-filter-widget">
+								<h4>Сезон</h4>
+								<div class="checkbox-filter">
+									<input type="checkbox" class="checkbox" name="season" id="summer">
+									<label for="summer"><img src="images/summer.svg" alt="">Летние</label>
+								</div>
+								<div class="checkbox-filter">
+									<input type="checkbox" class="checkbox" name="season" id="winter" checked>
+									<label for="winter"><img src="images/winter.svg" alt="">Зимние</label>
+								</div>
+								<div class="checkbox-filter">
+									<input type="checkbox" class="checkbox" name="season" id="allseasons">
+									<label for="allseasons"><img src="images/allseasons.svg" alt="">Всесезонние</label>
+								</div>
+							</div>
+							<div class="sidebar-filter-widget">
+								<h4>Бренд</h4>
+								<input type="text" name="search-filter" id="search-filter" placeholder="Поиск">
+								<p>Популярные</p>
+								<div class="sidebar-filter-list">
+									<div class="checkbox-filter">
+										<input type="checkbox" class="checkbox" name="brand" id="Barum">
+										<label for="Barum">Barum</label>
+									</div>
+									<div class="checkbox-filter">
+										<input type="checkbox" class="checkbox" name="brand" id="BFGoodrich">
+										<label for="BFGoodrich">BFGoodrich</label>
+									</div>
+									<div class="checkbox-filter">
+										<input type="checkbox" class="checkbox" name="brand" id="Bridgestone">
+										<label for="Bridgestone">Bridgestone</label>
+									</div>
+									<div class="checkbox-filter">
+										<input type="checkbox" class="checkbox" name="brand" id="Continental">
+										<label for="Continental">Continental</label>
+									</div>
+									<div class="checkbox-filter">
+										<input type="checkbox" class="checkbox" name="brand" id="Debica">
+										<label for="Debica">Debica</label>
+									</div>
+									<div class="checkbox-filter">
+										<input type="checkbox" class="checkbox" name="brand" id="Dunlop">
+										<label for="Dunlop">Dunlop</label>
+									</div>
+									<div class="checkbox-filter">
+										<input type="checkbox" class="checkbox" name="brand" id="Fulda">
+										<label for="Fulda">Fulda</label>
+									</div>
+									<div class="checkbox-filter">
+										<input type="checkbox" class="checkbox" name="brand" id="Gislaved">
+										<label for="Gislaved">Gislaved</label>
+									</div>
+									<div class="checkbox-filter">
+										<input type="checkbox" class="checkbox" name="brand" id="Goodyear">
+										<label for="Goodyear">Goodyear</label>
+									</div>
+									<div class="checkbox-filter">
+										<input type="checkbox" class="checkbox" name="brand" id="Hankook">
+										<label for="Hankook">Hankook</label>
+									</div>
+									<div class="checkbox-filter">
+										<input type="checkbox" class="checkbox" name="brand" id="Nokian">
+										<label for="Nokian">Nokian</label>
+									</div>
+								</div>
 							</div>
 						</div>
 					</form>
@@ -142,6 +266,21 @@
 						<div class="row justify-content-between">
 							<div class="col-12 col-lg-6">
 								<h1 class="like-three">Каталог</h1>
+							</div>
+							<div class="col-lg-3 col-6">
+								<div class="filter-toggle alt-btn btn-icon">
+									<img src="images/filter-icon.svg" alt="">
+									Фильтры
+								</div>
+							</div>
+							<div class="col-lg-3 col-6">
+								<div class="sort-catalogue">
+									<select name="sort-catalogue" id="sort-catalogue" class="custom-select">
+										<option value="">По популярности</option>
+										<option value="">По имени</option>
+										<option value="">Цене (по убыванию)</option>
+									</select>
+								</div>
 							</div>
 						</div>
 						<div class="row">
