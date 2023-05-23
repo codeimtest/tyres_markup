@@ -12,6 +12,15 @@
 
 /* md <= Large (lg) */
 @media (max-width : 992px) {
+	section h2{
+		margin-bottom: 30px;
+	}
+	section{
+		padding-top: 60px;
+	}
+	h2, .like-two{
+		font-size: 28px;
+	}
 	h3, .like-three{
 		font-size: 24px;
 	}
@@ -255,6 +264,53 @@ header .dropdown-items{
 	width: 100%;
 	display: block;
 }
+.first-screen{
+	padding: 60px 0;
+}
+.first-form{
+	margin-top: 20px;
+	padding: 15px;
+}
+.first-screen-wrap h1{
+	margin-bottom: 20px;
+}
+.ma-320{
+	margin: 0;
+}
+.contact-form{
+	margin-top: 40px;
+}
+.form-group{
+	flex-flow: column;
+}
+.form-float input{
+	margin-bottom: 12px;
+}
+.form-group .form-float{
+	width: 100%;
+}
+.form-bottom{
+	margin-top: 10px;
+	flex-flow: column;
+	align-items: flex-start;
+}
+.form-bottom button{
+	width: 100%;
+}
+.form-float label{
+	bottom: 60%;
+}
+.pb{
+	padding-bottom: 40px;
+}
+label.kstl {
+	bottom: 69%;
+}
+.form-bottom span{
+	margin-left: 0;
+	width: 100%;
+	margin-top: 10px;
+}
 }
 
 /* sm <= Medium (md) */
@@ -264,6 +320,9 @@ header .dropdown-items{
 
 /* xs <= Small (sm) */
 @media (max-width : 576px) {
+	.map-preview{
+		min-height: 160px;
+	}
 	.catalogue-item-info-price {
     padding-top: 0;
 }
@@ -306,6 +365,10 @@ header .dropdown-items{
 
 /* Large (lg) */
 @media (min-width : 992px) {
+
+	.first-screen-wrap{
+		margin-right: 40px;
+	}
 	.has-child > a::after{
 		margin-right: -24px;
 	}
