@@ -125,32 +125,39 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-3">
-					<form action="">
+					<form action="" class="filter-for-sidebar">
 						<div class="sidebar-filter">
+							<div class="sidebar-filter-widget">
+								<div class="d-flex align-items-center justify-content-between">
+									<h4>Вы выбрали</h4>
+									<span class="clear-filter d-none">Очистить</span>
+								</div>
+								<div id="selectedValues"></div>
+							</div>
 							<div class="sidebar-filter-widget">
 								<h4>Наличие в городе</h4>
 								<div class="checkbox-filter">
-									<input type="checkbox" class="checkbox" name="city" id="kazan">
+									<input type="checkbox" value="Казань" class="checkbox" name="city" id="kazan">
 									<label for="kazan">Казань</label>
 								</div>
 								<div class="checkbox-filter">
-									<input type="checkbox" class="checkbox" name="city" id="chelny">
+									<input type="checkbox" value="Набережные Челны" class="checkbox" name="city" id="chelny">
 									<label for="chelny">Набережные Челны</label>
 								</div>
 								<div class="checkbox-filter">
-									<input type="checkbox" class="checkbox" name="city" id="samara">
+									<input type="checkbox" value="Самара" class="checkbox" name="city" id="samara">
 									<label for="samara">Самара</label>
 								</div>
 								<div class="checkbox-filter">
-									<input type="checkbox" class="checkbox" name="city" id="ufa">
+									<input type="checkbox" value="Уфа" class="checkbox" name="city" id="ufa">
 									<label for="ufa">Уфа</label>
 								</div>
 								<div class="checkbox-filter">
-									<input type="checkbox" class="checkbox" name="city" id="nnovgorod">
+									<input type="checkbox" value="Нижний Новгород" class="checkbox" name="city" id="nnovgorod">
 									<label for="nnovgorod">Нижний новгород</label>
 								</div>
 								<div class="checkbox-filter">
-									<input type="checkbox" class="checkbox" name="city" id="voronezh">
+									<input type="checkbox" value="Воронеж" class="checkbox" name="city" id="voronezh">
 									<label for="voronezh">Воронеж</label>
 								</div>
 							</div>
@@ -158,102 +165,113 @@
 								<h4>Параметры</h4>
 								<p>Диаметр</p>
 								<div class="text-radio-filter">
-									<input type="radio" name="radius" id="r22.5" >
+									<input type="radio" value="Радиус: R22.5" name="radius" id="r22.5" >
 									<label for="r22.5">R22.5</label>
 								</div>
 								<div class="text-radio-filter">
-									<input type="radio" name="radius" id="r18">
+									<input type="radio" value="Радиус: R18" name="radius" id="r18">
 									<label for="r18">R18</label>
 								</div>
 								<div class="text-radio-filter">
-									<input type="radio" name="radius" id="r15">
+									<input type="radio" value="Радиус: R15" name="radius" id="r15">
 									<label for="r15">R15</label>
 								</div>
 								<div class="select-widget">
 									<div class="select-widget-item">
 										<label for="width">Ширина</label>
 										<select name="width" id="width" class="custom-select">
-											<option value="315" selected>315</option>
-											<option value="310">310</option>
-											<option value="300">300</option>
-											<option value="295">295</option>
+											<option selected  value="Ширина: 315">315</option>
+											<option value="Ширина: 310">310</option>
+											<option value="Ширина: 300">300</option>
+											<option value="Ширина: 295">295</option>
 										</select>
 									</div>
 									<div class="select-widget-item">
 										<label for="profile">Профиль</label>
 										<select name="profile" id="profile" class="custom-select">
-											<option value="70" selected>70</option>
-											<option value="65">65</option>
+											<option value="Профиль: 70" selected>70</option>
+											<option value="Профиль: 65">65</option>
 										</select>
 									</div>
 								</div>
 							</div>
 							<div class="sidebar-filter-widget">
 								<h4>Цена</h4>
-								
+								<div class="price__wrapper">
+									<span class="price-from"></span>
+									<span class="price-to"></span>
+								</div>
+								<div class="multi-range-slider">
+									<input type="range" id="input-left" min="0" step="50" max="5000" value="1000">
+									<input type="range" id="input-right" min="0" step="50" max="5000" value="4000">
+									<div class="slider">
+										<div class="track"></div>
+										<div class="range"></div>
+									</div>
+								</div>
 							</div>
 							<div class="sidebar-filter-widget">
 								<h4>Сезон</h4>
 								<div class="checkbox-filter">
-									<input type="checkbox" class="checkbox" name="season" id="summer">
+									<input type="checkbox" class="checkbox" value="Сезон: Летние" name="season" id="summer">
 									<label for="summer"><img src="images/summer.svg" alt="">Летние</label>
 								</div>
 								<div class="checkbox-filter">
-									<input type="checkbox" class="checkbox" name="season" id="winter" checked>
+									<input type="checkbox" class="checkbox" name="season" value="Сезон: Зимние" id="winter" checked>
 									<label for="winter"><img src="images/winter.svg" alt="">Зимние</label>
 								</div>
 								<div class="checkbox-filter">
-									<input type="checkbox" class="checkbox" name="season" id="allseasons">
+									<input type="checkbox" class="checkbox" name="season" value="Cезон: Всесезонние" id="allseasons">
 									<label for="allseasons"><img src="images/allseasons.svg" alt="">Всесезонние</label>
 								</div>
 							</div>
 							<div class="sidebar-filter-widget">
 								<h4>Бренд</h4>
-								<input type="text" name="search-filter" id="search-filter" placeholder="Поиск">
+								<!-- <input type="text" name="search-filter" id="search-filter" placeholder="Поиск"> -->
 								<p>Популярные</p>
 								<div class="sidebar-filter-list">
 									<div class="checkbox-filter">
-										<input type="checkbox" class="checkbox" name="brand" id="Barum">
+										<input type="checkbox" class="checkbox" name="brand" value="Бренд: Barum" id="Barum">
 										<label for="Barum">Barum</label>
 									</div>
 									<div class="checkbox-filter">
-										<input type="checkbox" class="checkbox" name="brand" id="BFGoodrich">
+										<input type="checkbox" class="checkbox" name="brand" value="Бренд: BFGoodrich" id="BFGoodrich">
 										<label for="BFGoodrich">BFGoodrich</label>
 									</div>
 									<div class="checkbox-filter">
-										<input type="checkbox" class="checkbox" name="brand" id="Bridgestone">
+										<input type="checkbox" class="checkbox" name="brand" value="Бренд: Bridgestone" id="Bridgestone">
 										<label for="Bridgestone">Bridgestone</label>
 									</div>
 									<div class="checkbox-filter">
-										<input type="checkbox" class="checkbox" name="brand" id="Continental">
+										<input type="checkbox" class="checkbox" name="brand" value="Бренд: Continental" id="Continental">
 										<label for="Continental">Continental</label>
 									</div>
 									<div class="checkbox-filter">
-										<input type="checkbox" class="checkbox" name="brand" id="Debica">
+										<input type="checkbox" class="checkbox" name="brand" value="Бренд: Debica" id="Debica">
 										<label for="Debica">Debica</label>
 									</div>
 									<div class="checkbox-filter">
-										<input type="checkbox" class="checkbox" name="brand" id="Dunlop">
+										<input type="checkbox" class="checkbox" name="brand" value="Бренд: Dunlop" id="Dunlop">
 										<label for="Dunlop">Dunlop</label>
 									</div>
 									<div class="checkbox-filter">
-										<input type="checkbox" class="checkbox" name="brand" id="Fulda">
+										<input type="checkbox" class="checkbox" name="brand" value="Бренд: Fulda" id="Fulda">
 										<label for="Fulda">Fulda</label>
 									</div>
 									<div class="checkbox-filter">
-										<input type="checkbox" class="checkbox" name="brand" id="Gislaved">
+										<input type="checkbox" class="checkbox" name="brand" value="Бренд: Gislaved" id="Gislaved">
 										<label for="Gislaved">Gislaved</label>
 									</div>
 									<div class="checkbox-filter">
-										<input type="checkbox" class="checkbox" name="brand" id="Goodyear">
+										<input type="checkbox" class="checkbox" name="brand" value="Бренд: Goodyear" id="Goodyear">
 										<label for="Goodyear">Goodyear</label>
 									</div>
 									<div class="checkbox-filter">
-										<input type="checkbox" class="checkbox" name="brand" id="Hankook">
+										<input type="checkbox" class="checkbox" name="brand" value="Бренд: Hankook" id="Hankook">
 										<label for="Hankook">Hankook</label>
 									</div>
 									<div class="checkbox-filter">
-										<input type="checkbox" class="checkbox" name="brand" id="Nokian">
+										<input type="checkbox" class="checkbox" name="brand" value="Бренд: Nokian" id="Nokian">
 										<label for="Nokian">Nokian</label>
 									</div>
 								</div>

@@ -53,10 +53,14 @@ $(".toggle-button").click(function(){
 })
 $(document).mouseup(function (e) {
 	var container = $(".aside-wrap");
+	var container2 = $('.dropdown-items-outer')
 	if (container.has(e.target).length === 0){
 			$('aside').removeClass('active');
 			$('.toggle-button').removeClass('active')
 			$('body').removeClass('lock');
+	}
+	if(container2.has(e.target).length === 0){
+		$('.dropdown-items-outer').removeClass('active');
 	}
 });
 $('.filter-toggle').click(function(){
@@ -88,4 +92,86 @@ $(".sidebar-filter-list").each(function() {
 	}
 	
 	});
+	$('.catalogue-btn').click(function(){
+		$('.dropdown-items').toggleClass('active');
+	})
+
+	//multirange slider
+	let inputLeft = document.getElementById("input-left");
+let inputRight = document.getElementById("input-right");
+let range = document.querySelector(".slider > .range");
+let priceFrom = document.querySelector(".price-from");
+let priceTo = document.querySelector(".price-to");
+
+function setLeftValue() {
+  let _this = inputLeft,
+    min = parseInt(_this.min),
+    max = parseInt(_this.max);
+
+  _this.value = Math.min(
+    parseInt(_this.value),
+    parseInt(inputRight.value) - 50
+  );
+  priceFrom.textContent = `${_this.value * 1000}`;
+
+  let percent = ((_this.value - min) / (max - min)) * 100;
+
+  range.style.left = percent + "%";
+}
+
+setLeftValue();
+
+function setRightValue() {
+  let _this = inputRight,
+    min = parseInt(_this.min),
+    max = parseInt(_this.max);
+
+  _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 50);
+  priceTo.textContent = `${_this.value * 1000}`;
+
+  let percent = ((_this.value - min) / (max - min)) * 100;
+
+  range.style.right = 100 - percent + "%";
+}
+
+setRightValue();
+
+inputLeft.addEventListener("input", setLeftValue);
+inputRight.addEventListener("input", setRightValue);
+
+
+inputLeft.addEventListener("touchstart", (e) => {
+  inputLeft.classList.add("active");
+});
+inputLeft.addEventListener("touchend", (e) => {
+  inputLeft.classList.remove("active");
+});
+
+
+inputRight.addEventListener("touchstart", (e) => {
+  inputRight.classList.add("active");
+});
+inputRight.addEventListener("touchend", (e) => {
+  inputRight.classList.remove("active");
+});
+
+
+$('.sidebar-filter-widget input[type=radio], .sidebar-filter-widget input[type=checkbox], .sidebar-filter-widget select').on('change', function() {
+	var selectedValues = '';
+
+	$('.sidebar-filter-widget input[type=radio]:checked, .sidebar-filter-widget input[type=checkbox]:checked,.sidebar-filter-widget select').each(function() {
+		selectedValues += '<li>' + $(this).val() + '</li>';
+	});
+
+	$('#selectedValues').html('<ul>' + selectedValues + '</ul>');
+
+	$('#selectedValues ul li').on('click', function() {
+		var value = $(this).text();
+
+		$(this).remove();
+		$('input[value="' + value + '"]').prop('checked', false).prop('selected', false);
+	});
+
+});
+
 

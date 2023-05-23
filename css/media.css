@@ -233,6 +233,28 @@ aside .phone-widget{
 .product-image-carousel{
 	margin-bottom: 30px;
 }
+header .dropdown-items{
+	display: none;
+}
+.dropdown-items ul{
+	box-shadow: none;
+	position: relative;
+	width: 100%;
+	padding: 0 16px;
+	max-width: initial;
+	height: 0;
+}
+.dropdown-items{
+	opacity: 1;
+	visibility: visible;
+}
+.dropdown-items.active ul{
+	height: 100%;
+}
+.dropdown-items ul li a{
+	width: 100%;
+	display: block;
+}
 }
 
 /* sm <= Medium (md) */
@@ -284,6 +306,9 @@ aside .phone-widget{
 
 /* Large (lg) */
 @media (min-width : 992px) {
+	.has-child > a::after{
+		margin-right: -24px;
+	}
 	aside{display: none;}
 	.filter-toggle{
 		display: none;
