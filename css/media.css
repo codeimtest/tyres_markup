@@ -229,7 +229,7 @@ aside ul li a{
 	color: var(--text);
 }
 aside .phone-widget{
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -237,7 +237,7 @@ aside .phone-widget{
 	padding: 18px 16px;
 	border-top: 1px solid #E2E8F0;
 	background: #fff;
-	width: 100%;
+	width: 90%;
 }
 .product-image-carousel{
 	margin-bottom: 30px;
@@ -311,6 +311,19 @@ label.kstl {
 	width: 100%;
 	margin-top: 10px;
 }
+.section-title-text{
+	margin-bottom: 20px;
+}
+.mr-70{
+	margin-right: 0;
+}
+.about-bg{
+	min-height: 208px;
+	margin-top: 40px;
+}
+.contact-btn {
+	margin-bottom: 8px;
+}
 }
 
 /* sm <= Medium (md) */
@@ -320,6 +333,12 @@ label.kstl {
 
 /* xs <= Small (sm) */
 @media (max-width : 576px) {
+	.contact-btn {
+		width: 100%;
+	}
+	.contact-map{
+		min-height: 150px;
+	}
 	.map-preview{
 		min-height: 160px;
 	}

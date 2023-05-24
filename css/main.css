@@ -71,6 +71,8 @@ h5,.like-five{
 .page-content h1{
 	margin-bottom: 32px;
 }
+.mt-80{margin-top: 80px;}
+.mr-70{margin-right: 70px;}
 .text-center{text-align: center;}
 /*BUTTONS*/
 .main-btn{
@@ -1214,7 +1216,7 @@ visibility: hidden;
 section{
 	padding-top: 120px;
 }
-section h2{
+section h2,section h1{
 	margin-bottom: 60px;
 }
 .new-products {
@@ -1303,7 +1305,7 @@ border-radius: 100%;
 .contact-cards{
 	margin-top: 60px;
 }
-.section-title span{
+.section-title span,.section-title-text span{
 	color: var(--accent);
 }
 .ma-320{
@@ -1350,7 +1352,7 @@ border-radius: 100%;
 	z-index: 1;
 }
 .form-bottom{
-	margin-top: 40px;
+	margin-top: 30px;
 	display: flex;
 	align-items: center;
 }
@@ -1363,4 +1365,77 @@ border-radius: 100%;
 }
 .pb{
 	padding-bottom: 120px;
+}
+/*about*/
+.fact p{
+	font-size: 16px;
+}
+.fact{
+	text-align: center;
+}
+.about-bg{
+	min-height: 680px;
+	width: 100%;
+	margin-top: 100px;
+}
+.image{
+	border-radius: 8px;
+	object-fit: cover;
+	max-height: 640px;
+	width: 100%;
+}
+
+.section-title-text{
+	margin-bottom: 40px;
+}
+/*contacts*/
+.contact-card{
+	padding-bottom: 60px;
+	margin-bottom: 60px;
+	border-bottom: 1px solid #E2E8F0;
+}
+.contact-card-info h4{
+	margin-bottom: 24px;
+}
+.contact-card-info p + p{
+	margin-top: 16px;
+}
+.contact-card-info p img{
+	margin-right: 12px;
+}
+.contact-card-info p{
+	display: flex;
+	margin-bottom: 0;
+	align-items: center;
+}
+.contact-card-info p a{
+	color: var(--text);
+}
+.btns-widget{
+	margin-top: 24px;
+}
+.contact-btn{
+	border: 1px solid #E2E8F0;
+border-radius: 4px;
+text-align: center;
+padding: 5px 16px;
+color: var(--text);
+display: inline-block;
+}
+.contact-btn:hover{
+	color: var(--text);
+}
+.btns-widget .contact-btn + .contact-btn{
+	margin-right: 16px;
+}
+.contact-map{
+	border: 1px solid rgba(15, 23, 42, 0.1);
+	border-radius: 12px;
+	min-height: 280px;
+	width: 100%;
+}
+.contact-map img{
+	width: 100%;
+	object-fit: cover;
+	height: 100%;
 }
