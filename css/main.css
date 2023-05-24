@@ -1439,3 +1439,17 @@ display: inline-block;
 	object-fit: cover;
 	height: 100%;
 }
+.tyre-bg{
+	position: relative;
+	z-index: 1;
+}
+.tyre-bg::after{
+	content: '';
+	background: url(../images/tyre-bg.svg) no-repeat;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	bottom: -500px;
+	left: 0;
+}

@@ -219,7 +219,6 @@ aside ul{
 	padding: 0 16px;
 	overflow: auto;
 	margin-bottom: 0;
-	height: 100%;
 }
 aside ul li a{
 	padding: 10px 0;
@@ -229,7 +228,7 @@ aside ul li a{
 	color: var(--text);
 }
 aside .phone-widget{
-	position: fixed;
+	position: relative;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -237,7 +236,11 @@ aside .phone-widget{
 	padding: 18px 16px;
 	border-top: 1px solid #E2E8F0;
 	background: #fff;
-	width: 90%;
+	width: 100%;
+	margin-top: 40px;
+}
+.tyre-bg::after{
+	bottom: -150px;
 }
 .product-image-carousel{
 	margin-bottom: 30px;
