@@ -166,6 +166,21 @@
 header .logo{
 	margin-right: 0;
 }
+header{
+	position: fixed;
+	width: 100%;
+	z-index: 200;
+}
+.product-image-carousel > .swiper-wrapper .swiper-slide img{
+	min-height: 326px;
+}
+
+.page-section{
+	padding-top: 80px;
+}
+.first-screen,.page-content,.section-page{
+	padding-top: 100px !important;
+}
 .logo span{
 	margin-left: 12px;
 	padding-left: 12px;
@@ -389,6 +404,7 @@ label.kstl {
 .order-wrap h5{
 	font-size: 16px;
 }
+
 }
 
 /* sm <= Medium (md) */
