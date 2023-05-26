@@ -206,8 +206,6 @@ aside .toggle-button{
 .toggle-menu-header span{
 	font-size: 20px;
 	line-height: 28px;
-	font-weight: 700;
-	text-transform: uppercase;
 }
 aside .btn-icon{
 	justify-content: flex-start;
@@ -327,6 +325,70 @@ label.kstl {
 .contact-btn {
 	margin-bottom: 8px;
 }
+.cart-product-list-item img{
+	width: 100px;
+	height: 100px;
+}
+.cart-product-list-item-meta{
+	flex-flow: column;
+	margin-left: 16px;
+}
+.cart-product-list-item-meta p{
+	width: 100%;
+	margin-left: 0;
+}
+.product-cart-price{
+	margin-top: 8px;
+	justify-content: space-between;
+}
+.toggle-menu-footer{
+	padding: 16px;
+}
+.toggle-menu-footer a{
+	font-size: 14px;
+	min-width: 176px;
+	text-align: center;
+}
+.toggle-menu-footer{
+	justify-content: space-between;
+}
+.toggle-menu-wrap{
+	padding: 16px;
+}
+.toggle-menu-info{
+	margin-top: 14px;
+}
+.popup .popup-dialog{
+	margin: 0;
+	max-height: 100%;
+	height: 100%;
+}
+.popup .popup-dialog .popup-wrap{
+	border-radius: 0;
+	height: 100%;
+	min-height: auto;
+	position: fixed;
+	overflow-y: scroll;
+}
+.popup .toggle-menu-header{
+	padding-left: 0;
+	padding-right: 0;
+}
+.order-wrap{
+	flex-flow: column;
+}
+.order-wrap-list, .order-wrap-contacts{
+	width: 100%;
+}
+.order-wrap-list::after{
+	content: none;
+}
+.order-wrap-list{
+	margin-bottom: 32px;
+}
+.order-wrap h5{
+	font-size: 16px;
+}
 }
 
 /* sm <= Medium (md) */
@@ -336,6 +398,25 @@ label.kstl {
 
 /* xs <= Small (sm) */
 @media (max-width : 576px) {
+	.total-price{
+		margin-bottom: 16px;
+	}
+	.popup-order .toggle-menu-footer{
+		align-items: flex-start;
+	}
+	.toggle-menu-footer{
+		flex-flow: column;
+	}
+	.close-popup{
+		margin-bottom: 10px	;
+	}
+	.toggle-menu-footer a{
+		width: 100%;
+		margin-left: 0;
+	}
+	.toggle-menu-footer a:last-child{
+		margin-left: 0;
+	}
 	.contact-btn {
 		width: 100%;
 	}
